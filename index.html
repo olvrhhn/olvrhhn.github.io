@@ -11,6 +11,35 @@
   gtag('config', 'G-95G63QKJR0');
 </script>
 
+<script>
+  // Function to calculate distance between two points
+  function getDistance(x1, y1, x2, y2) {
+    return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+  }
+
+  // Update images based on distance from the mouse
+  function updateImages(event) {
+    document.querySelectorAll('.hoverGif').forEach(imgElement => {
+      const imgRect = imgElement.getBoundingClientRect();
+      const imgCenterX = imgRect.left + imgRect.width / 2;
+      const imgCenterY = imgRect.top + imgRect.height / 2;
+      const distance = getDistance(imgCenterX, imgCenterY, event.clientX, event.clientY);
+      const threshold = 200; // pixels
+
+      if (distance < threshold) {
+        imgElement.src = imgElement.dataset.animated; // Play GIF if mouse is close
+      } else {
+        imgElement.src = imgElement.dataset.static; // Show static image if mouse is far
+      }
+    });
+  }
+
+  // Listen for mouse movement
+  document.addEventListener('mousemove', updateImages);
+</script>
+
+
+
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -82,7 +111,31 @@ machines resulted in a patented new type of linear actuator.</p><br>
 
           <tr>
             <td style="padding:10px;padding-top:20px;width:25%;vertical-align:middle">
-              <img src="images/self_adapt.gif" width=200px />
+              <!--<img class="hoverGif" src="images/primaps_static.png" data-static="images/primaps_static.png" data-animated="images/primaps.gif" width="200px" />-->
+              <img src="images/primaps.gif" width="175px" />
+            </td>
+            <td style="padding:10px;width:75%;vertical-align:middle">
+              <papertitle>Boosting Unsupervised Semantic Segmentation with Principal Mask Proposals </papertitle>
+              <br>
+              <a class="small" style="color:black" href="https://olvrhhn.github.io"><b>Oliver Hahn</b></a>, 
+              <a class="small" style="color:black" href="https://arnike.github.io">Nikita Araslanov</a>, 
+              <a class="small" style="color:black" href="https://schaubsi.github.io"> Simone Schaub-Meyer</a>
+              <a class="small" style="color:black" href="https://www.visinf.tu-darmstadt.de/visual_inference/people_vi/stefan_roth.en.jsp">and Stefan Roth</a> 
+              <br>
+              <br>
+              <em><a class="small" style="color:black" href="https://www.jmlr.org/tmlr/papers/">ArXiv Preprint</a></em>
+              <br>
+              <br>
+              <a href="https://arxiv.org/">Paper</a> | <a 
+href="https://github.com/visinf/primaps">Code</a>
+              <br>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:10px;padding-top:20px;width:25%;vertical-align:middle">
+              <!-- <img class="hoverGif" src="images/self_adapt_static.png" data-static="images/self_adapt_static.png" data-animated="images/self_adapt.gif" width="200px" /> -->
+              <img src="images/self_adapt.gif" width="175px" />
             </td>
             <td style="padding:10px;width:75%;vertical-align:middle">
               <papertitle>Semantic Self-adaptation: Enhancing Generalization with a Single Sample</papertitle>
