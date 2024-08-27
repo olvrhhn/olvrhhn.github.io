@@ -82,12 +82,12 @@
                 </svg>
                 Code
             </a>
-            <a class="btn btn-light" role="button" href="https://huggingface.co/">
+            <!-- <a class="btn btn-light" role="button" href="https://huggingface.co/">
                 <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 375 531">
                     <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "></polygon>
                 </svg>
                 Demo 🤗
-            </a>
+            </a> -->
         </div>
         </div>
     </div>
@@ -146,12 +146,12 @@
                 <img src="data/method.png" alt="architecture" style="width: 100%">
                 &nbsp;
                 <p align="justify">
-                    PriMaPs-EM architecture (left): An image I and its augmented version I′ are embedded by the
+                    <u>PriMaPs-EM architecture (left):</u> An image I and its augmented version I′ are embedded by the
                     frozen self-supervised backbone F, resulting in the dense features f and f′. The segmentation prediction y
                     by the momentum class prototypes θ<sub>M</sub> arises via the dot product with f. Likewise, y′ arises from the dot
                     product of the running class prototypes θ<sub>R</sub> with f′. Pseudo labels P* are constructed using PriMaPs, I,
                     and y. We use the pseudo labels to optimize θ<sub>R</sub>, applying a focal loss. θ<sub>R</sub> is gradually transferred to θ<sub>M</sub> by
-                    means of an EMA. PriMaPs pseudo label generation (right): Masks P are proposed by iterative binary
+                    means of an EMA. <u>PriMaPs pseudo label generation (right):</u> Masks P are proposed by iterative binary
                     partitioning based on the cosine similarity of the features of any unassigned pixel to their first principal component’s nearest neighbor feature. Gray indicates these iterative steps. Next, the masks P are aligned to the image I using a CRF. Finally, a per-mask pseudo-class ID is assigned using majority voting based on
                     the segmentation prediction y, resulting in the pseudo label P*.
                 </p>
@@ -166,21 +166,21 @@
             </div>
             <div class="col-sm-12">
                 <p align="justify">
-                    Cityscapes – PriMaPs-EM (Ours) comparison to existing unsupervised semantic segmentation methods, using Accuracy and mean IoU (in %) for unsupervised and supervised probing.
+                    <u>Cityscapes</u> – PriMaPs-EM (Ours) comparison to existing unsupervised semantic segmentation methods, using Accuracy and mean IoU (in %) for unsupervised and supervised probing.
                 </p>
                 <img src="data/results_cityscapes.png" alt="architecture" style="width: 100%">
             </div>
             &nbsp;
             <div class="col-sm-12">
                 <p align="justify">
-                    COCO-Stuff – PriMaPs-EM (Ours) comparison to existing unsupervised semantic segmentation methods, using Accuracy and mean IoU (in %) for unsupervised and supervised probing.
+                    <u>COCO-Stuff</u> – PriMaPs-EM (Ours) comparison to existing unsupervised semantic segmentation methods, using Accuracy and mean IoU (in %) for unsupervised and supervised probing.
                 </p>
                 <img src="data/results_coco.png" alt="architecture" style="width: 100%">
             </div>
             &nbsp;
             <div class="col-sm-12">
                 <p align="justify">
-                    Potsdam3 – PriMaPs-EM (Ours) comparison to existing unsupervised semantic segmentation methods, using Accuracy and mean IoU (in %) for unsupervised and supervised probing.
+                    <u>Potsdam-3</u> – PriMaPs-EM (Ours) comparison to existing unsupervised semantic segmentation methods, using Accuracy and mean IoU (in %) for unsupervised and supervised probing.
                 </p>
                 <img src="data/results_potsdam.png" alt="architecture" style="width: 100%">
             </div>
@@ -204,7 +204,7 @@
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-15">
                 <h2>Citation</h2>
                 <code>
                     @article{Hahn:2024:BUS,<br>
